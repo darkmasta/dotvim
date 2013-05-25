@@ -12,6 +12,8 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'tpope/vim-rails.git'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-fugitive'
 
 
 
