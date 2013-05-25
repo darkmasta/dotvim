@@ -1,22 +1,11 @@
-set nocompatible                  " be iMproved
-filetype off                      " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original repos on github
-Bundle 'tpope/vim-rails.git'
+" Pathogen commands
+call pathogen#infect()
+call pathogen#helptags()
 
 
 
 filetype plugin indent on
-
+set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
@@ -46,11 +35,7 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"    
-"         My configurations
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "" Number
 set number
 
@@ -99,6 +84,9 @@ endfunction
 set nobackup  
 set noswapfile
 
+" fuzzyfinder file openinig plugin
+map <Leader>t :FuzzyFinderTextMate<CR>
+
 " Buf Explorer
 let g:bufExplorerShowRelativePath=1
 
@@ -112,9 +100,6 @@ set autochdir
 set go-=m
 set go-=T
 set go-=r
-
-" for hidden buffers
-set hidden
 
 
 

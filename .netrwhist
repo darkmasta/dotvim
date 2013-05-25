@@ -1,3 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/home/eren'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/eren/.vim'
+let g:netrw_dirhist_2='/home/eren/Sites/bitcoin_exchange'
+let g:netrw_dirhist_3='/home/eren/Sites/bitcoin_exchange/app'
+let g:netrw_dirhist_4='/home/eren/Sites/bitcoin_exchange/app/controllers'
+let g:netrw_dirhist_5='/home/eren/Sites/vape_cookbook/app/views/static_pages'
+let g:netrw_dirhist_6='/home/eren/Sites/vape_cookbook/app/views'
+let g:netrw_dirhist_7='/home/eren/Sites/vape_cookbook/app/views/layouts'
