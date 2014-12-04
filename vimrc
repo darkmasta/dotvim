@@ -1,22 +1,22 @@
 set nocompatible                  " be iMproved
 filetype off                      " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
 "
 " original repos on github
-Bundle 'tpope/vim-rails.git'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails.git'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-fugitive'
 
 
-
+call vundle#end()
 filetype plugin indent on
 
 source $VIMRUNTIME/vimrc_example.vim
