@@ -14,7 +14,11 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-rails.git'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'leafoftree/vim-vue-plugin'
+Plugin 'dense-analysis/ale'
 
+Plugin 'msanders/snipmate.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -22,6 +26,9 @@ filetype plugin indent on
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
+
+ActivateAddons vim-snippets snipmate
+
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -56,8 +63,9 @@ endfunction
 "" Number
 set number
 
+set noundofile
 "" Font
-set guifont=ProggyCleanTT\ 12
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
 
 ""Colorscheme
 colorscheme railscasts
@@ -76,12 +84,16 @@ set cpoptions+=$
 "" virtual edit
 set virtualedit=all
 
-inoremap ( ()<Esc>:call BC_AddChar(")")<CR>i
 inoremap [ []<Esc>:call BC_AddChar("]")<CR>i
 inoremap " ""<Esc>:call BC_AddChar("\"")<CR>i
 
 " jump out of parenthesis
 inoremap <C-j> <Esc>:call search(BC_GetChar(), "W")<CR>a
+
+" abbravations
+:iabbrev func function foo() {<CR><CR>}<Up><Tab>
+:iabbrev cl console.log()<Left><ESC><X><CR>i
+
 
 function! BC_AddChar(schar)
  if exists("b:robstack")
@@ -118,6 +130,25 @@ set go-=r
 " for hidden buffers
 set hidden
 
+" syntax highlight on html
+au BufReadPost *.ezt set syntax=html
 
+" *** Keys *** 
+let mapleader = ","
+imap jj <esc>
 
-                             
+" *** Abbreviations *** {{{1
+
+iab tihs this
+iab tehn then
+
+filetype plugin on
+
+" linting settings
+let g:ale_linters = {
+\   'javascript': ['standard'],
+\}
+let g:ale_fixers = {'javascript': ['standard']}
+
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
